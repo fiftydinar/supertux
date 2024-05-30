@@ -790,7 +790,10 @@ AddonManager::scan_for_info(const std::string& archive_os_path) const
     }
   });
 
-  m_nfo_filename_hints[archive_os_path] = nfoFilename;
+  if(!nfoFilename.empty())
+  {
+    m_nfo_filename_hints[archive_os_path] = nfoFilename;
+  }
 
   return nfoFilename;
 }
